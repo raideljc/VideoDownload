@@ -1,19 +1,14 @@
-from kivymd.app import MDApp
-from kivy.lang import Builder
+import kivy
 
-class SampleApp(MDApp):
-    
+from kivy.app import App
+from kivy.uix.button import Button
+
+
+class MyApp(App):
+
     def build(self):
-        self.appKv='''
-MDScreen:
-    MDLabel:
-        text:'Hello,World.'
-        multiline:True
-        color:"blue"
-        halign:'center'         
-'''
-        AppScreen=Builder.load_string(self.appKv)
-        return AppScreen
+        return Button(text='Hello World')
 
-SampleApp().run()
-    
+
+if __name__ == '__main__':
+    MyApp().run()
